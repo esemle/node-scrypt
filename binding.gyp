@@ -42,7 +42,7 @@
       'conditions': [
         ['OS=="win"', {
           'copies' : [{
-            'destination':'scrypt/scrypt-1.2.0/',
+            'destination':'scrypt/scrypt-1.2.1/',
             'files' : [
               'scrypt/win/include/config.h'
             ]
@@ -54,20 +54,20 @@
       'target_name': 'scrypt_lib',
       'type' : 'static_library',
       'sources': [
-        'scrypt/scrypt-1.2.0/lib/crypto/crypto_scrypt.c',
-        'scrypt/scrypt-1.2.0/lib/crypto/crypto_scrypt_smix.c',
-        'scrypt/scrypt-1.2.0/libcperciva/util/warnp.c',
-        'scrypt/scrypt-1.2.0/libcperciva/alg/sha256.c',
-        'scrypt/scrypt-1.2.0/libcperciva/util/insecure_memzero.c',
-        'scrypt/scrypt-1.2.0/lib/scryptenc/scryptenc_cpuperf.c',
+        'scrypt/scrypt-1.2.1/lib/crypto/crypto_scrypt.c',
+        'scrypt/scrypt-1.2.1/lib/crypto/crypto_scrypt_smix.c',
+        'scrypt/scrypt-1.2.1/libcperciva/util/warnp.c',
+        'scrypt/scrypt-1.2.1/libcperciva/alg/sha256.c',
+        'scrypt/scrypt-1.2.1/libcperciva/util/insecure_memzero.c',
+        'scrypt/scrypt-1.2.1/lib/scryptenc/scryptenc_cpuperf.c',
         '<@(scrypt_platform_specific_files)',
       ],
       'include_dirs': [
-        'scrypt/scrypt-1.2.0/',
-        'scrypt/scrypt-1.2.0/libcperciva/cpusupport',
-        'scrypt/scrypt-1.2.0/libcperciva/alg',
-        'scrypt/scrypt-1.2.0/libcperciva/util',
-        'scrypt/scrypt-1.2.0/lib/crypto',
+        'scrypt/scrypt-1.2.1/',
+        'scrypt/scrypt-1.2.1/libcperciva/cpusupport',
+        'scrypt/scrypt-1.2.1/libcperciva/alg',
+        'scrypt/scrypt-1.2.1/libcperciva/util',
+        'scrypt/scrypt-1.2.1/lib/crypto',
         '<@(scrypt_platform_specific_includes)',
       ],
       'defines': [
@@ -90,11 +90,11 @@
       'include_dirs': [
         'src/scryptwrapper/inc',
         'src',
-        'scrypt/scrypt-1.2.0/libcperciva/alg',
-        'scrypt/scrypt-1.2.0/libcperciva/util',
-        'scrypt/scrypt-1.2.0/lib/crypto',
-        'scrypt/scrypt-1.2.0/lib/util/',
-        'scrypt/scrypt-1.2.0/lib/scryptenc/',
+        'scrypt/scrypt-1.2.1/libcperciva/alg',
+        'scrypt/scrypt-1.2.1/libcperciva/util',
+        'scrypt/scrypt-1.2.1/lib/crypto',
+        'scrypt/scrypt-1.2.1/lib/util/',
+        'scrypt/scrypt-1.2.1/lib/scryptenc/',
         '<@(scrypt_platform_specific_includes)',
       ],
       'defines': [
