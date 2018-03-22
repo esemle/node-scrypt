@@ -42,6 +42,7 @@ NAN_METHOD(kdfVerify);
 NAN_METHOD(hashSync);
 NAN_METHOD(hash);
 NAN_METHOD(encSync);
+NAN_METHOD(enc);
 
 //
 // Module initialisation
@@ -74,6 +75,9 @@ NAN_MODULE_INIT(InitAll) {
 
   Nan::Set(target, Nan::New<String>("encSync").ToLocalChecked(),
     Nan::GetFunction(Nan::New<FunctionTemplate>(encSync)).ToLocalChecked());
+
+  Nan::Set(target, Nan::New<String>("enc").ToLocalChecked(),
+    Nan::GetFunction(Nan::New<FunctionTemplate>(enc)).ToLocalChecked());
 }
 
 NODE_MODULE(scrypt, InitAll)

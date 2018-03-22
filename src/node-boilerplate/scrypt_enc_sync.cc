@@ -31,13 +31,13 @@ NAN_METHOD(encSync) {
   const size_t passwd_size = node::Buffer::Length(info[1]);
   const uint8_t* salt_ptr = reinterpret_cast<uint8_t*>(node::Buffer::Data(info[2]));
   const size_t salt_size = node::Buffer::Length(info[2]);
-  const size_t enc_size = info[3]->IntegerValue();
+  const size_t hash_size = info[3]->IntegerValue();
   const NodeScrypt::Params params = info[4]->ToObject();
 
   //
   // Variable Declaration
   //
-  Local<Value> hash_result = Nan::NewBuffer(static_cast<uint32_t>(enc_size)).ToLocalChecked();
+  Local<Value> hash_result = Nan::NewBuffer(static_cast<uint32_t>(hash_size)).ToLocalChecked();
   uint8_t* hash_ptr = reinterpret_cast<uint8_t*>(node::Buffer::Data(hash_result));
 
   //

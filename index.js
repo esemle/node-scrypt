@@ -385,6 +385,10 @@ var scrypt = {
   encSync: function() {
     return scryptNative.encSync(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4]);
   },
+
+  enc: function() {
+    scryptNative.enc(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5]);
+  },
 };
 
 module.exports = scrypt;

@@ -3,8 +3,7 @@
 ## Notes ##
 This is a fork of Barry Steyn's node-scrypt library. The end goal is to add support 
 for Fisebase's version of scrypt. This is useful for developers that are migrating
-away from Firebase. At the moment it's just a hacky integration for testing. Asynchronous
-integration is a nice to have.
+away from Firebase. At the moment it's just a hacky integration for testing.
 
 I've made the following changes:
 * Updated to scrypt to version 1.2.1
@@ -31,10 +30,17 @@ const userSalt = Buffer.from("user_salt", "base64");
 // If you review the main.c you'll see the salt is actually a concatenation of the user's salt and the salt seperator.
 const salt = Buffer.concat([userSalt, saltSeperator]);
 
-// The magic part... 
+// Synchronous
 const result = scrypt.encSync(key, password, salt, length, params);
-
 console.log(result.toString("base64"));
+
+// Asynchronous
+scrypt.enc(key, password, salt, length, params, function(error, result) {
+    if (error) {
+        return console.log(error);
+    }
+    console.log(result.toString("base64"));
+});
 ```
 
 ## Original Details ##

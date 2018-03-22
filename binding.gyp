@@ -123,6 +123,7 @@
         'src/node-boilerplate/scrypt_hash_sync.cc',
         'src/node-boilerplate/scrypt_hash_async.cc',
         'src/node-boilerplate/scrypt_enc_sync.cc',
+        'src/node-boilerplate/scrypt_enc_async.cc',
         'scrypt_node.cc'
       ],
       'include_dirs': [

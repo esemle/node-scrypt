@@ -1,5 +1,5 @@
 /*
-TODO: Blah blah blah
+Hook into the scrypt encrypt data feature using a key derevied from a passcode.
 
 By: Eric Semle
 */
