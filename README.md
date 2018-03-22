@@ -1,8 +1,43 @@
 # Scrypt For Node
 
-[![Build Status](https://travis-ci.org/barrysteyn/node-scrypt.png?branch=master)](https://travis-ci.org/barrysteyn/node-scrypt)
-[![npm version](https://badge.fury.io/js/scrypt.svg)](http://badge.fury.io/js/scrypt)
+## Notes ##
+This is a fork of Barry Steyn's node-scrypt library. The end goal is to add support 
+for Fisebase's version of scrypt. This is useful for developers that are migrating
+away from Firebase. At the moment it's just a hacky integration for testing. Asynchronous
+integration is a nice to have.
 
+I've made the following changes:
+* Updated to scrypt to version 1.2.1
+* Merged [Firebase's scrypt](https://github.com/firebase/scrypt) changes.
+* Implemented hook for synchronous password encryption.
+
+# Firebase Example
+
+```JavaScript
+const key = Buffer.from("base64_signer_key", "base64");
+const saltSeperator = Buffer.from("base64_salt_separator", "base64");
+const params = { 
+  r:8,  // rounds
+  p:14  // mem_cost
+};
+
+// The output length of the hash. Firebase uses 64 bytes.
+const length = 64;
+
+// user variables
+const password = Buffer.from("user_password");
+const userSalt = Buffer.from("user_salt", "base64");
+
+// If you review the main.c you'll see the salt is actually a concatenation of the user's salt and the salt seperator.
+const salt = Buffer.concat([userSalt, saltSeperator]);
+
+// The magic part... 
+const result = scrypt.encSync(key, password, salt, length, params);
+
+console.log(result.toString("base64"));
+```
+
+## Original Details ##
 Scrypt for Node/IO is a native node/io C++ wrapper for Colin Percival's
 [scrypt](https://www.tarsnap.com/scrypt.html) cryptographic hash utility.
 
