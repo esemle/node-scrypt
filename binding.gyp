@@ -58,8 +58,11 @@
         'scrypt/scrypt-1.2.1/lib/crypto/crypto_scrypt_smix.c',
         'scrypt/scrypt-1.2.1/libcperciva/util/warnp.c',
         'scrypt/scrypt-1.2.1/libcperciva/alg/sha256.c',
+        'scrypt/scrypt-1.2.1/libcperciva/crypto/crypto_aes.c',
+        'scrypt/scrypt-1.2.1/libcperciva/crypto/crypto_aesctr.c',
         'scrypt/scrypt-1.2.1/libcperciva/util/insecure_memzero.c',
         'scrypt/scrypt-1.2.1/lib/scryptenc/scryptenc_cpuperf.c',
+        'scrypt/scrypt-1.2.1/lib/scryptenc/scryptenc.c',
         '<@(scrypt_platform_specific_files)',
       ],
       'include_dirs': [
@@ -67,6 +70,7 @@
         'scrypt/scrypt-1.2.1/libcperciva/cpusupport',
         'scrypt/scrypt-1.2.1/libcperciva/alg',
         'scrypt/scrypt-1.2.1/libcperciva/util',
+        'scrypt/scrypt-1.2.1/libcperciva/crypto',
         'scrypt/scrypt-1.2.1/lib/crypto',
         '<@(scrypt_platform_specific_includes)',
       ],
@@ -85,13 +89,15 @@
         'src/util/memlimit.c',
         'src/scryptwrapper/keyderivation.c',
         'src/scryptwrapper/pickparams.c',
-        'src/scryptwrapper/hash.c'
+        'src/scryptwrapper/hash.c',
+        'src/scryptwrapper/enc.c'
       ],
       'include_dirs': [
         'src/scryptwrapper/inc',
         'src',
         'scrypt/scrypt-1.2.1/libcperciva/alg',
         'scrypt/scrypt-1.2.1/libcperciva/util',
+        'scrypt/scrypt-1.2.1/libcperciva/crypto',
         'scrypt/scrypt-1.2.1/lib/crypto',
         'scrypt/scrypt-1.2.1/lib/util/',
         'scrypt/scrypt-1.2.1/lib/scryptenc/',
@@ -116,6 +122,7 @@
         'src/node-boilerplate/scrypt_kdf-verify_async.cc',
         'src/node-boilerplate/scrypt_hash_sync.cc',
         'src/node-boilerplate/scrypt_hash_async.cc',
+        'src/node-boilerplate/scrypt_enc_sync.cc',
         'scrypt_node.cc'
       ],
       'include_dirs': [

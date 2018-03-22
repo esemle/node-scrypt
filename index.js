@@ -380,7 +380,11 @@ var scrypt = {
       // Normal async with callback
       scryptNative.hash(args[0], args[1], args[2], args[3], args[4]);
     }
-  }
+  },
+
+  encSync: function() {
+    return scryptNative.encSync(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4]);
+  },
 };
 
 module.exports = scrypt;

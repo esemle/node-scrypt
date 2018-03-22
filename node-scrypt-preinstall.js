@@ -8,6 +8,6 @@ var OS = require("os")
 // Regenerate config if not a windows platform
 // if windows, use the default config.h
 if (OS.platform() !== "win32") {
-  exec("make clean", {"cwd": path + "/scrypt/scrypt-1.2.0"});
-  exec("./configure", {cwd: path + "/scrypt/scrypt-1.2.0"}, puts);
+  exec("make clean", {"cwd": path + "/scrypt/scrypt-1.2.1"});
+  exec("./configure", {cwd: path + "/scrypt/scrypt-1.2.1"}, puts);
 }
