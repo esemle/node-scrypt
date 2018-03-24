@@ -80,6 +80,7 @@
       'conditions': [
         ['OS=="win"', { 'defines' : [ 'inline=__inline' ] }],
       ],
+      'cflags': ['-std=c11'],
       'dependencies': ['copied_files'],
     },
     {
